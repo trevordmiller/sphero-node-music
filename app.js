@@ -9,6 +9,10 @@ var meta = require('./package.json');
 var config = {
     port: '/dev/tty.Sphero-WWB-AMP-SPP'
 };
+var songs = [
+    'all-this-test.mp3',
+    'you-and-me.mp3'
+]
 
 // Init
 console.log(chalk.bold.magenta('----------------------------------------------------'));
@@ -44,7 +48,8 @@ Cylon.robot({
 
         // When a collision happens
         me.sphero.on('collision', function() {
-            console.log('Shuffle');
+            var newSong = songs[Math.floor(Math.random() * songs.length)];
+            console.log('Shuffle -> ' + newSong);
             color = color ^ bitFilter;
             me.sphero.setRGB(color);
         });

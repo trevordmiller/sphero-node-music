@@ -1,5 +1,5 @@
-# sphero-node-playground
-Messing around with Sphero programmed with Node.
+# Sphero Music Shuffle
+Change your music randomly with Sphero collisions.
 
 Using [cylon.js](http://cylonjs.com/documentation/drivers/sphero/)
 
