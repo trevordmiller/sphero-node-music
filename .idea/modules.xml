@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../sphero-music-shuffle/.idea/sphero-node-playground.iml" filepath="$PROJECT_DIR$/../sphero-music-shuffle/.idea/sphero-node-playground.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../sphero-music/.idea/sphero-music.iml" filepath="$PROJECT_DIR$/../sphero-music/.idea/sphero-music.iml" />
     </modules>
   </component>
 </project>
