@@ -31,70 +31,27 @@ Cylon.robot({
 
     work: function(me) {
         var color = 0x00FF00,
-            collisionCount = 0,
-            maxCollisions = 5,
             bitFilter = 0xFFFF00;
 
+        // Init
         after((1).seconds(), function() {
+            say.speak('Alex', 'It\'s party time.')
+            console.log('Setting up Collision Detection...');
+            me.sphero.detectCollisions();
             me.sphero.setRGB(color);
-            say.speak('Alex', 'Hello world! I like to party.', function(){
-                console.log(chalk.bold.blue('Hello world! I like to party.'));
-                console.log(chalk.bold.blue('Setting up Collision Detection...'));
-                me.sphero.detectCollisions();
-                me.sphero.stop();
-                me.sphero.roll(200, Math.floor(Math.random() * 360));
-            });
-
+            me.sphero.stop();
         });
 
+        // When a collision happens
         me.sphero.on('collision', function() {
-            collisionCount = collisionCount + 1;
-            console.log(chalk.bold.red('Collision Count: ' + collisionCount));
-            if(collisionCount >= maxCollisions) {
-                color = color ^ bitFilter;
-                me.sphero.setRGB(color);
-                me.sphero.stop();
-            }
-            else {
-                say.speak('Alex', 'Ouch!');
-                console.log(chalk.bold.magenta('Ouch!'));
-                color = color ^ bitFilter;
-                me.sphero.setRGB(color);
-                me.sphero.roll(200, Math.floor(Math.random() * 360));
-            }
+            console.log('Shuffle');
+            color = color ^ bitFilter;
+            me.sphero.setRGB(color);
+        });
+
+        // Randomly change direction every second
+        every((5).second(), function() {
+            me.sphero.roll(200, Math.floor(Math.random() * 360));
         });
     }
 }).start();
-
-//var color = 0xFFFFFF,
-//    collisionCount = 0,
-//    maxCollisions = 5;
-//
-//after((1).seconds(), function() {
-//    me.sphero.setRGB(color);
-//    console.log(chalk.bold.blue('Hello world! I like to party.'));
-//    say.speak('Alex', 'Hello world! I like to party.', function(){
-//        console.log(chalk.bold.blue('Setting up Collision Detection...'));
-//        me.sphero.detectCollisions();
-//        me.sphero.stop();
-//        me.sphero.roll(150, Math.floor(Math.random() * 360));
-//    });
-//});
-//
-//me.sphero.on('collision', function() {
-//    collisionCount = collisionCount + 1;
-//    if(collisionCount >= maxCollisions) {
-//        me.sphero.stop();
-//        console.log(chalk.bold.blue('I do not like to party any more.'));
-//        say.speak('Alex', 'I do not like to party any more. I need to go to the hospital.', function(){
-//            color = 0x000000;
-//            me.sphero.setRGB(color);
-//        });
-//    } else {
-//        say.speak('Alex', 'Ouch!');
-//        console.log(chalk.bold.magenta('Ouch!'));
-//        color = 0x00FF00;
-//        me.sphero.setRGB(color);
-//        me.sphero.roll(150, Math.floor(Math.random() * 360));
-//    }
-//});
