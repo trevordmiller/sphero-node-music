@@ -1,0 +1,33 @@
+{
+  "name": "sphero-node-playground",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Messing around with Node and Sphero.",
+  "main": "app.js",
+  "dependencies": {
+    "chalk": "^0.5.1",
+    "cylon": "^0.22.0",
+    "cylon-sphero": "^0.18.0",
+    "say": "^0.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trevordmiller/sphero-node-playground.git"
+  },
+  "keywords": [
+    "node",
+    "sphero",
+    "nodebot"
+  ],
+  "author": "Trevor D. Miller <trevordmiller@icloud.com> (http://www.frontend.tv/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trevordmiller/sphero-node-playground/issues"
+  },
+  "homepage": "https://github.com/trevordmiller/sphero-node-playground"
+}
