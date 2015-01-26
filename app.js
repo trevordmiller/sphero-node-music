@@ -11,7 +11,7 @@ var meta = require('./package.json');
 // User options
 var config = {
     port: '/dev/tty.Sphero-WWB-AMP-SPP',
-    spotifyUri: 'spotify:artist:0C0XlULifJtAgn6ZNCW2eu',
+    spotifyUri: 'spotify:user:trevordmiller:playlist:6v21ZQK24pm7EbdfXBckk8',
     randomRoll: false
 };
 
@@ -47,7 +47,7 @@ Cylon.robot({
             console.log(chalk.bgCyan('Running ' + meta.name + ' version ' + meta.version));
             console.log(chalk.bgCyan('----------------------------------------------------'));
             console.log(chalk.bgCyan('It\'s party time.'));
-            say.speak('Alex', 'Hello world. I\'m Spheero. I like to party.');
+            say.speak('Alex', 'Hello world. I\'m Sphere O and I like to party.');
             console.log(chalk.cyan('Setting up Collision Detection...'));
             me.sphero.detectCollisions();
             me.sphero.stop();
