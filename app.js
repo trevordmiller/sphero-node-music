@@ -40,7 +40,7 @@ Cylon.robot({
             console.log(chalk.bgCyan('----------------------------------------------------'));
             console.log(chalk.bgCyan('Running ' + meta.name + ' version ' + meta.version));
             console.log(chalk.bgCyan('----------------------------------------------------'));
-            console.log(chalk.bgCyan('It\'s party time.'));
+            console.log(chalk.cyan('Hello world!'));
             say.speak('Alex', 'Hello world. I\'m Sphere O and I like to party.');
             console.log(chalk.cyan('Setting up Collision Detection...'));
             me.sphero.detectCollisions();
@@ -57,7 +57,7 @@ Cylon.robot({
         // On disconnect
         me.sphero.on('disconnect', function() {
             exec('spotify pause', handleSysOutput);
-            console.log(chalk.bgCyan('Goodbye world!'));
+            console.log(chalk.cyan('Goodbye world!'));
             say.speak('Alex', 'Goodbye world!');
         });
 
