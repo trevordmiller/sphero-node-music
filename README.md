@@ -8,6 +8,7 @@ Control Spotify with your Sphero: play a new song from a Spotify URI when Sphero
 
 1. Install [Node / npm](https://npmjs.org).
 1. `npm install -g spotify-cli`.
+1. `npm install`.
 1. Open Spotify - _Spotify must be open in the background for this app to work_.
 1. Turn on your Speakers.
 1. Customize `config.js`.
