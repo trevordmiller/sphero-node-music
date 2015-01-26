@@ -5,18 +5,12 @@ var say = require('say');
 var sys = require('sys')
 var exec = require('child_process').exec;
 var meta = require('./package.json');
+var config = require('./config.js');
 
 // INTERNALS
 
-// User options
-var config = {
-    port: '/dev/tty.Sphero-WWB-AMP-SPP',
-    spotifyUri: 'spotify:user:trevordmiller:playlist:6v21ZQK24pm7EbdfXBckk8',
-    randomRoll: false
-};
-
 // Shared functions
-function puts(error, stdout, stderr) {
+function handleSysOutput(error, stdout, stderr) {
     sys.puts(stdout)
 }
 
@@ -38,10 +32,10 @@ Cylon.robot({
 
     // Main
     work: function(me) {
-        var color = 0x800080,
-            songsPlayed = 0;
 
         // Init
+        var color = 0x800080,
+            songsPlayed = 0;
         after((1).seconds(), function() {
             console.log(chalk.bgCyan('----------------------------------------------------'));
             console.log(chalk.bgCyan('Running ' + meta.name + ' version ' + meta.version));
@@ -53,7 +47,7 @@ Cylon.robot({
             me.sphero.stop();
 
             // Start playing from Spotify URI
-            exec('spotify play ' + config.spotifyUri, puts);
+            exec('spotify play ' + config.spotifyUri, handleSysOutput);
             console.log(chalk.bold.magenta('Playing chosen Spotify URI'));
             songsPlayed = songsPlayed + 1;
             color = 0x800080;
@@ -62,7 +56,7 @@ Cylon.robot({
 
         // On disconnect
         me.sphero.on('disconnect', function() {
-            exec('spotify pause', puts);
+            exec('spotify pause', handleSysOutput);
             console.log(chalk.bgCyan('Goodbye world!'));
             say.speak('Alex', 'Goodbye world!');
         });
@@ -72,7 +66,7 @@ Cylon.robot({
             songsPlayed = songsPlayed + 1;
 
             // Skip to next song
-            exec('spotify next', puts);
+            exec('spotify next', handleSysOutput);
             if ((songsPlayed % 2) === 0) {
                 console.log(chalk.bold.blue('Playing song ' + songsPlayed));
                 color= 0x0000FF;

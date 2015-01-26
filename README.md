@@ -1,23 +1,21 @@
 # Sphero Music
 
-Control Spotify with your Sphero. Play a new song from a Spotify URI when Sphero is tapped or collides with something in "randomRoll" mode.
-
-Using [cylon.js](http://cylonjs.com/documentation/drivers/sphero/)
+Control Spotify with your Sphero: play a new song from a Spotify URI when Sphero is tapped or collides with something in "randomRoll" mode.
 
 ---
 
 ## Getting Started
 
-1. **Install** [Node / npm](https://npmjs.org) (if you haven't already).
-1. **Run** `npm install -g spotify-cli` (to install the Spotify CLI globally on your machine).
-1. **Open** Spotify (Spotify must be open in the background for this app to work).
-1. **Turn on** your Speakers (to hear Sphero's voice and the music).
-1. **Customize** the `config` object in `app.js`.
-    - Get your Sphero's `mySpheroPort` value by running `ls /dev/tty.Sphero*`.
-    - Get a `spotifyUri` by right clicking on a Spotify artist, album, or playlist and selecting `Copy Spotify URI`.
-1. **Connect** your Sphero via Bluetooth (in System preferences).
-1. **Double tap** your Sphero (to wake it up - it should be flashing colors).
-1. **Run** `node app.js` (to start the app).
+1. Install [Node / npm](https://npmjs.org).
+1. `npm install -g spotify-cli`.
+1. Open Spotify - _Spotify must be open in the background for this app to work_.
+1. Turn on your Speakers.
+1. Customize `config.js`.
+1. Connect your Sphero via Bluetooth.
+1. Double tap your Sphero to wake it up - _it should be flashing colors_.
+1. `node app.js`.
+
+---
 
 ### Having problems?
 
@@ -26,6 +24,4 @@ Using [cylon.js](http://cylonjs.com/documentation/drivers/sphero/)
 
 ---
 
-## Other Options
-
-This app uses `spheron` to control the Sphero; Spheron's API is not documented, so you have to read through the [Spheron source code](https://github.com/alchemycs/spheron/blob/master/lib/commands/api.js) to find other Sphero methods.
+Using [cylon.js](http://cylonjs.com/documentation/drivers/sphero/). Check out the Cylon.js API and examples for more info.

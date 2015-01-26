@@ -29,3 +29,6 @@ node_modules
 
 # Webstorm
 .idea/
+
+# npm
+npm-debug.log
