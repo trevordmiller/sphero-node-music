@@ -1,6 +1,7 @@
-# Sphero Music
+# Sphero Node Music
+_Control Spotify with your Sphero and Node._
 
-Control Spotify with your Sphero: play a new song from a Spotify URI when Sphero is tapped or collides with something in "randomRoll" mode. Sphero changes colors to match logged output with each song change.
+Play a new song from a Spotify URI when Sphero is tapped or collides with something in "randomRoll" mode. Sphero changes colors to match logged output with each song change.
 
 ---
 

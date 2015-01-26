@@ -1,8 +1,8 @@
 {
-  "name": "sphero-music",
+  "name": "sphero-node-music",
   "version": "1.0.0",
   "private": true,
-  "description": "Messing around with Node and Sphero.",
+  "description": "Control Spotify with your Sphero and Node.",
   "main": "app.js",
   "dependencies": {
     "chalk": "^0.5.1",
@@ -17,17 +17,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/trevordmiller/sphero-music.git"
+    "url": "https://github.com/FrontEndTV/sphero-node-music.git"
   },
   "keywords": [
     "node",
     "sphero",
     "nodebot"
   ],
-  "author": "Trevor D. Miller <trevordmiller@icloud.com> (http://www.frontend.tv/)",
+  "author": "Trevor D. Miller <frontendtv@gmail.com> (http://www.frontend.tv/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/trevordmiller/sphero-node-playground/issues"
+    "url": "https://github.com/FrontEndTV/sphero-node-music/issues"
   },
-  "homepage": "https://github.com/trevordmiller/sphero-node-playground"
+  "homepage": "http://www.frontend.tv"
 }
